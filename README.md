@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Flywire Employee Directory Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based frontend application for managing and retrieving company employee information. The application interacts with a Spring Boot backend to fetch and display employee data. It allows users to view active employees, get employee details, add new employees, and deactivate employees.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- **React**: A JavaScript library for building user interfaces.
+- **Material-UI (MUI)**: A popular React UI framework for building responsive, modern web applications.
+- **Axios**: A promise-based HTTP client for making requests to the backend API.
+- **react-router-dom**: A library for routing in React applications.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- List all active employees in alphabetical order.
+- View detailed information about an employee, including their direct hires.
+- Add a new employee with validation.
+- Deactivate an employee by their ID.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14.x or later)
+- npm (v6.x or later)
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    git clone https://github.com/sirius829/flywire-frontend.git
+    cd flywire-frontend
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies:**
 
-### `npm run eject`
+    ```bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Running the Application
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Start the development server:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```bash
+    npm start
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    The application will start on `http://localhost:3000`.
 
-## Learn More
+### Environment Variables
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Make sure to set the backend server URL in the `.env` file. Create a `.env` file in the root of the project and add the following:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```env
+    REACT_APP_SERVER_IP=http://localhost:8080
+    ```
 
-### Code Splitting
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Home Page (Active Employees)
 
-### Analyzing the Bundle Size
+1. Navigate to `http://localhost:3000`.
+2. The home page displays a list of all active employees in alphabetical order.
+3. Click on an employee to view their detailed information.
+4. Click on `deactive Icon` to deactivate the specific employee.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Active Employees by hired Range Page
 
-### Making a Progressive Web App
+1. Navigate to `http://localhost:3000/range`.
+2. The page displays a list of all active employees hired in the selected date range in hired date order descending.
+3. Click on an employee to view their detailed information.
+4. Click on `deactive Icon` to deactivate the specific employee.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Employee Details Page
 
-### Advanced Configuration
+1. Click on an employee from the home page list.
+2. You will be navigated to the employee details page showing the employee's position, hire date, and their direct hires.
+3. Click on employee listed on direct hire, you will be navigated to his/her detail page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Add Employee Popup
 
-### Deployment
+1. Navigate to `http://localhost:3000/` or click on the "New Employee" Button.
+2. Fill in the employee details in the form.
+3. Click the "Add Employee" button to submit.
+4. If successful, popup will removed, and the new employee will be added to the list of active employees.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Checking Pages
 
-### `npm run build` fails to minify
+- **Home Page**: Displays the list of active employees.
+- **Home Page**: Displays the list of active employees hired in the selected date range.
+- **Employee Details Page**: Displays details of a selected employee.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### License
+
+This project is licensed under the MIT License.
